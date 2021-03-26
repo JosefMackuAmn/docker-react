@@ -8,6 +8,12 @@ before_install:
 script:
   - docker run joniamon/docker-react npm run test -- --coverage
 
+before_deploy:
+  - echo "------------------------------------"
+  - echo $AWS_ACCESS_KEY
+  - echo $AWS_SECURE_KEY
+  - echo "------------------------------------"
+
 deploy:
   provider: elasticbeanstalk
   region: "eu-central-1"
