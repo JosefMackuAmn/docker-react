@@ -8,12 +8,6 @@ before_install:
 script:
   - docker run joniamon/docker-react npm run test -- --coverage
 
-before_deploy:
-  - echo "------------------------------------"
-  - echo "$AWS_ACCESS_KEY"
-  - echo "$AWS_SECURE_KEY"
-  - echo "------------------------------------"
-
 deploy:
   provider: elasticbeanstalk
   region: "eu-central-1"
@@ -23,5 +17,5 @@ deploy:
   bucket_path: "docker-react"
   on:
     branch: master
-  access_key_id: "AKIAZAWBQQSTYVLCD44H"
-  secret_access_key: "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"
+  access_key_id: "$AWS_ACCESS_KEY"
+  secret_access_key: "$AWS_SECURE_KEY"
