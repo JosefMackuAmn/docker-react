@@ -10,8 +10,8 @@ script:
 
 before_deploy:
   - echo "------------------------------------"
-  - echo $AWS_ACCESS_KEY
-  - echo $AWS_SECURE_KEY
+  - echo "$AWS_ACCESS_KEY"
+  - echo "$AWS_SECURE_KEY"
   - echo "------------------------------------"
 
 deploy:
@@ -23,6 +23,6 @@ deploy:
   bucket_path: "docker-react"
   on:
     branch: master
-  access_key_id: "$AWS_ACCESS_KEY"
+  access_key_id: "AKIAZAWBQQSTYVLCD44H"
   secret_access_key:
-    secure: "$AWS_SECURE_KEY"
+    secure: "Qkxdtf8vgQ/BW+H+I/jQORVufyxHhMc5Q5r9KYH9"
